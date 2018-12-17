@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Sistema Financeiro </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+   <!-- Datatable-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+ 
+    <link rel="stylesheet" href="Content/css/base.css">
+    <link rel="stylesheet" href="Content/css/cadastro.css">
+</head>
+<body>
+<!-- Meu header-->
+
+<section >
+    <nav id="meu-menu" class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">L&DFinancas</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/cadastro">Cadastro</a></li>
+            <li><a href="/relatorio">Relatórios</a></li>
+            <li><a href="/configuracoes">Configurações</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown ">
+                <a id="nome-usuario" class="dropdown-toggle" data-toggle="dropdown" href="#">Luciane
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        
+        </div>
+    </nav>
+</section>
+
+<div class="container">   
+
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="button" class="btn btn-fd-primary" value="Cadastro" data-toggle="modal" data-target="#modal-cadastro" data-backdrop="static">
+            <!-- Modal -->
+            <div class="modal fade" id="modal-cadastro" role="dialog">
+                <div class="modal-dialog">
+                    
+                    <!-- Modal content-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                             <h4 class="modal-title">Cadastro de titulos</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <label for="cliente-titulo"> Cliente</label>
+                                        <select class="form-control" id="cliente-titulo">
+                                            <option>Luciane</option>
+                                            <option>Diogo</option>
+                                            <option>Weberson</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="numero-titulo">Numero do titulo</label>
+                                        <input type="text" class="form-control" id="numero-titulo">
+                                    </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="descricao-titulo">Descricao</label>
+                                        <input type="text" class="form-control" id="descricao-titulo">
+                                    </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="tipo-titulo">Tipo</label>
+                                        <select class="form-control" id="tipo-titulo">
+                                            <option>A pagar</option>
+                                            <option>A receber</option>
+                                        </select>
+                                    </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="data-referencia">Data referencia</label>
+                                        <input type="date" class="form-control" id="data-referencia">
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="data-vencimento">Data vencimento</label>
+                                        <input type="date" class="form-control" id="data-vencimento">
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="valor-titulo">Valor</label>
+                                        <input type="text" class="form-control" id="valor-titulo">
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <label for="natureza-lancamento">Natureza lancamento</label>
+                                        <select class="form-control" id="natureza-lancamento">
+                                            <option>Conta de Luz</option>
+                                            <option>Conta de Internet</option>
+                                            <option>Educacao</option>
+                                            <option>Carro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="observacao-titulo">Observacao</label>
+                                        <textarea class="form-control" rows="3" id="observacao-titulo"></textarea>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" class="btn btn-fd-primary" data-dismiss="modal">Salvar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+                <table id="titulos" class="display" style="width:100%">
+                        <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>61</td>
+                                    <td>2011/04/25</td>
+                                    <td>$320,800</td>
+                                </tr>
+                                <tr>
+                                    <td>Garrett Winters</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>63</td>
+                                    <td>2011/07/25</td>
+                                    <td>$170,750</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashton Cox</td>
+                                    <td>Junior Technical Author</td>
+                                    <td>San Francisco</td>
+                                    <td>66</td>
+                                    <td>2009/01/12</td>
+                                    <td>$86,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Cedric Kelly</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td>Edinburgh</td>
+                                    <td>22</td>
+                                    <td>2012/03/29</td>
+                                    <td>$433,060</td>
+                                </tr>
+                                <tr>
+                                    <td>Airi Satou</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>33</td>
+                                    <td>2008/11/28</td>
+                                    <td>$162,700</td>
+                                </tr>
+                                <tr>
+                                    <td>Brielle Williamson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>New York</td>
+                                    <td>61</td>
+                                    <td>2012/12/02</td>
+                                    <td>$372,000</td>
+                                </tr>
+                        </tbody>
+                </table>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+<script src="Content/js/cadastro.js"></script>
+</body>
+</html>

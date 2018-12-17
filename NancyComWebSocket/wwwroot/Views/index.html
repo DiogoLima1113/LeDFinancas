@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Sistema Financeiro </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="Content/css/base.css">
+    <link href="Content/css/index.css?" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- Meu header-->
+
+<section >
+    <nav id="meu-menu" class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">L&DFinancas</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/cadastro">Cadastro</a></li>
+            <li><a href="/relatorio">Relatórios</a></li>
+            <li><a href="/configuracoes">Configurações</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown ">
+                <a id="nome-usuario" class="dropdown-toggle" data-toggle="dropdown" href="#">Luciane
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        
+        </div>
+    </nav>
+</section>
+
+<div class="container">   
+<!--Aqui comeco a crìar o corpo-->
+<div class="corpo col-sm-12">
+        <div class="col-sm-12">
+            <div class="col-sm-4">
+                <div class="cards">
+                    <span class="titulo-card">Contas a pagar</span> <br><br>
+                    <div class="valores">
+                        <i class="fas fa-arrow-down fd-danger"></i> <span>R$ 950,00</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="cards">
+                    <span class="titulo-card">Conta a receber</span><br><br>
+                    <div class="valores">
+                        <i class="fas fa-arrow-up fd-success"></i> <span>R$ 2550,00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="cards">
+                    <span class="titulo-card">Fluxo de caixa</span><br><br>
+                    <div class="valores">
+                        <i class="fas fa-hand-holding-usd fd-info"></i> <span>R$ 1950,00</span>
+                    </div>
+                  
+                   
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+</div>
+
+
+    <script data-main="Content/js/indexconfig" src="/Content/js/require.js" async></script>
+</body>
+</html>

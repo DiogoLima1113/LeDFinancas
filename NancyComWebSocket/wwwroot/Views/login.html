@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>sistema | Log in</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/login.css?" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body>
+    <div id="box-login">
+        <center>
+            <h1 class="titulo-login">Sistema</h1>
+        </center>
+        <form id="formLogin" method="post" action="/login" onsubmit="login">
+            <div>
+                <div class="form-group">
+                    <label class="control-label">Usuário</label>
+                    <input type="text" name="usuario" placeholder="Login de rede" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label id="lblSenha" class="control-label">Senha</label>
+                    <input type="password" name="senha" placeholder="Senha de rede" class="form-control" required />
+                </div>
+                <div id="chkLembrarme" class="form-group">
+                    <input id="checkbox1" name="lembrar_me" class="css-checkbox" type="checkbox">
+                    <label for="checkbox1" class="css-label">Manter conectado</label>
+                </div>
+            </div>
+            <div id="btnEntrar">
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Content/js/login.js?"></script>
+</body>
+</html>

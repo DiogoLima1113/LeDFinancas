@@ -1,0 +1,42 @@
+
+
+ #meu-menu{
+    background-color: rgb(4,162,179);
+    color: white;
+    top:0px;
+  
+ }
+ .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand{
+     color: white;
+ }
+
+ .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover{
+    background-color: rgb(42,50,60);   
+ }
+ #nome-usuario:hover{
+    background-color: transparent !important;
+ }
+
+ .corpo{
+    margin-top:40px;
+ }
+
+ .cards{
+    width: 320px;
+    height: 220px;
+    background-color:  rgb(50,60,72);
+    border-radius: 5px;
+    color: rgb(152,164,185);
+    padding: 20px;
+    text-align: center;
+ }
+
+ .titulo-card{
+    font-size: 23px;
+ }
+
+.valores{
+   color: white;
+   font: bold;
+   font-size: 25px;
+}

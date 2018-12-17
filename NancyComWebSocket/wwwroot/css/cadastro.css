@@ -1,0 +1,21 @@
+.modal-header{
+    background-color: rgb(4,162,179);
+    color: white;    
+   }
+
+  #observacao-titulo{
+      resize: none;
+  }
+  button{ width: 90px;}
+
+ #titulos_wrapper{
+    background-color:  rgb(50,60,72);
+    padding: 20px;
+    color:  rgb(152,164,185);
+    margin-top: 25px;
+ }
+
+ label>select, label>input[type="search"]{
+     border-radius: 5px;
+     padding: 3px;
+ }
