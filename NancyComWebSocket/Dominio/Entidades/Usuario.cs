@@ -10,7 +10,11 @@ namespace NancyComWebSocket.Dominio.Entidades
     {
         public long Id { get; private set; }
         public Guid Guid { get; set; }
-
+        public string Nome {get; set;}
+        public DateTime? DataInativacao {get;set;}
+        public DateTime DataCadastro {get;set;}
+        public long PerfilId {get;set;}
+            
         public IEnumerable<string> Claims { get; set; }
 
         public string AuthenticationType => "Default";
@@ -19,7 +23,7 @@ namespace NancyComWebSocket.Dominio.Entidades
 
         public string Login => Name;
 
-        // Isso aqui é para atender uma propriedad que a Interace  IIdentity tem.
+        // Isso aqui é para atender uma propriedadE que a InterFace  IIdentity tem.
         // Remova e veja a interface vai pedir para você implementar um Name que só tenha retorno.
         public string Name 
         { 

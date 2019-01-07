@@ -1,9 +1,9 @@
 using System.Data;
 using System.Configuration;
 using System;
-using Npgsql;
 using Microsoft.Extensions.Configuration;
 using NancyComWebSocket.Dominio.Repositorios.Interfaces;
+using System.Data.SqlClient;
 
 namespace NancyComWebSocket.Dominio.Repositorio
 {
@@ -17,17 +17,16 @@ namespace NancyComWebSocket.Dominio.Repositorio
         public ConnectionProvider(IConfiguration configuration)
         {
             Configuration = configuration;
-            ConnectionString = Configuration["ConnectionStrings:Database"];
-            // string path = (new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath;
-            // path = System.IO.Path.GetDirectoryName(System.Uri.UnescapeDataString(path)) + System.IO.Path.DirectorySeparatorChar;
-            // DatabaseInstaller.Install("postgres", ConnectionString, path + "Sitema.Migrations.dll");
+            ConnectionString = @"Data Source=DESKTOP-95IKDVP\SQLEXPRESS;
+                                Initial Catalog=LDFinancas;
+                                Integrated Security=SSPI";
         }
 
         public IDbConnection CreateNewConnection()
         {
             // Retorna uma conexão postgrees.
             // Fazer um semelhante para conexão SQL.
-            return new NpgsqlConnection(ConnectionString);
+            return new SqlConnection(ConnectionString);
         }
 
         public void CommitTransaction(IDbTransaction transaction)

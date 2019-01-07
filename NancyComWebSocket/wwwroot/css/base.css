@@ -12,13 +12,6 @@ letras de fundo rgb(152,164,185)
  body{
     background-color: rgb(42,50,60); 
 }
-
-#meu-menu{
-    background-color: rgb(4,162,179);
-    color: white;
-    top:0px;
-  
- }
  .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand{
      color: white;
  }
@@ -36,6 +29,32 @@ letras de fundo rgb(152,164,185)
 
 
  .btn-fd-primary{
-    background-color: rgb(4,162,179);
+    background-color: rgb(60,141,188);
     color: white;    
    }
+
+.btn-fd-primary:hover{
+   background-color: rgb(10, 88, 189);
+   color: white;    
+   }
+
+.btn-fd-primary:focus{
+   color: white;    
+   }
+
+   #meu-menu{
+   background-color: rgb(60,141,188)!important;
+   color: white;
+   top:0px;
+}
+
+nav{ background-color: rgb(60,141,188) !important; }
+
+.modal-header{
+   background-color: rgb(60,141,188);
+   color: white;
+}
+
+button[type="button"].btn{
+   width: 90px;
+}

@@ -1,5 +1,9 @@
 $(document).ready(function () {
  
-    $('#titulos').DataTable();
+    $('#tabela-titulos').DataTable({
+        language: {
+            url: "Content/js/json/Portuguese-Brasil.json"
+        }
+    });
 
 });
