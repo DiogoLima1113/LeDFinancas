@@ -43,8 +43,17 @@ namespace NancyComWebSocket.Dominio.Repositorio
         {
             using (var con = Conn.CreateNewConnection())
             {
-                return con.Query<Usuario>("SELECT * FROM usuarios WHERE login = @Login",
-                                         new {Login = login}).FirstOrDefault();
+                return con.Query<dynamic>(@"SELECT id, login ,nome, data_cadastro AS dataCadastro, 
+		                                           data_inativacao AS datainativacao,
+                                                   perfil_id as perfilid, guid 
+                                            FROM usuarios 
+                                            WHERE login = @Login",new {Login = login})
+                        .Select(u => {
+                            var user = new Usuario((long)u.id, (string)u.nome, new Guid((string)u.guid),
+                                                 (string)u.login,(DateTime)u.dataCadastro,
+                                                 Convert.ToDateTime(u.datainativacao),(long)u.perfilid );
+                                                 
+                                                 return user;}).FirstOrDefault();
             }
         }
 

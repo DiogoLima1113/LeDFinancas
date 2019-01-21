@@ -8,7 +8,7 @@ namespace NancyComWebSocket.Modules
     {
         public IndexModule()
         {
-            //this.RequiresAuthentication();
+            this.RequiresAuthentication();
             Get("/", _ =>
             {
                 return View["index.html"];

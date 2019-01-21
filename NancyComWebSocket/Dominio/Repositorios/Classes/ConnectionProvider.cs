@@ -24,8 +24,6 @@ namespace NancyComWebSocket.Dominio.Repositorio
 
         public IDbConnection CreateNewConnection()
         {
-            // Retorna uma conexão postgrees.
-            // Fazer um semelhante para conexão SQL.
             return new SqlConnection(ConnectionString);
         }
 

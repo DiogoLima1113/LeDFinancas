@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using NancyComWebSocket.Dominio.Repositorios.Interfaces;
 using System.Linq;
+using NancyComWebSocket.Dominio.Entidades;
 
 namespace NancyComWebSocket.Dominio.Servico
 {
@@ -16,15 +17,18 @@ namespace NancyComWebSocket.Dominio.Servico
             this.RepositorioUsuario = repUsuario;
         }
 
-        public bool ObterUsuarioAutenticado(string login, string senha)
+        public Usuario ObterUsuarioAutenticado(string login, string senha)
         {
             var pwd = Salt + senha;
             var senhaSalt = Base64Encode(pwd);
             var hash = GerarHashMd5(senhaSalt);
             var usuario = RepositorioUsuario.Obter(login);
-
+            System.Console.WriteLine(usuario.Login);
             var senhaBanco = RepositorioUsuario.ObterSenha(usuario.Id);
-            return (senhaBanco == hash);
+            if (senhaBanco == hash){
+                return usuario;
+            }
+            return new Usuario();
         }
 
         private static string Base64Encode(string plainText) {

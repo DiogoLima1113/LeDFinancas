@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 
 using Serilog;
+using NancyComWebSocket.Dominio.Servico;
 
 namespace NancyComWebSocket.NancyModules
 {
@@ -23,7 +24,9 @@ namespace NancyComWebSocket.NancyModules
         public LoginModule(IConfiguration configuration,
                            IHostingEnvironment env,
                            IAutenticador autenticador,
-                           ILogger log)
+                           ILogger log,
+                           ServicoAutenticacao servicoAutenticacao,
+                           IRepositorioUsuarios repUsuarios)
         {
             Log = log;
 
@@ -54,28 +57,21 @@ namespace NancyComWebSocket.NancyModules
                 var login = ((string)this.Request.Form.Usuario).ToLower();
                 var senha = (string)this.Request.Form.Senha;
                 var mensagemErro = string.Empty;
-
+              
         
-                try
+              
+                var usuarioAutenticado = servicoAutenticacao.ObterUsuarioAutenticado(login, senha);
+                 
+                if(usuarioAutenticado.Id < 1)
                 {
-                    // Usuario usuarioAutenticado = servicoAutenticacaoUsuario.ObterUsuarioAutenticadoAsync(login, senha);
-                    // var guid = autenticador.InserirSessao(usuarioAutenticado, expires);
-                    // usuarioAutenticado.Guid = guid;
+                    return this.Context.GetRedirect("~/login?" + (string) Request.Form.Usuario + "#erroLogin");
+                }
 
+                var guid = autenticador.InserirSessao(usuarioAutenticado, expires);
                   
-                }
-                catch(Exception ex)
-                {
-                    Log.Error("Ocorreu um erro não esperado: " + ex.Message);
-                         mensagemErro = "Ocorreu um erro não esperado: " + ex.Message; 
-                }
-
-                    // criei isso aqui só porque não autentiquei o usuário, remover depois.
-                var usuarioAutenticado = new Usuario();
-                usuarioAutenticado.Guid = new Guid();
-
-                Log.Information("Login realizado com sucesso - usuario -> " + (string) Request.Form.Usuario);
-                return this.LoginWithoutRedirect(usuarioAutenticado.Guid, expires);
+                
+                Log.Information("Login realizado com sucesso - usuario -> " + Request.Form.Usuario);
+                return this.LoginAndRedirect(guid, expires);
             });
 
             Get("/logout", _ =>
@@ -85,8 +81,12 @@ namespace NancyComWebSocket.NancyModules
                     // Fazer a rotina de logaut do sistema, obter o usuário logado para remover a sessão do mesmo.
                     // Fazer algo semelhante abaixo.
 
-                    // if (this.Context.CurrentUser != null)
-                    //     autenticador.Remover(autenticador.Obter(this.Context.CurrentUser.AsUsuario().Guid));
+                     if (this.Context.CurrentUser != null)
+                     {   
+                        var usuario = repUsuarios.Obter(this.Context.CurrentUser.Identity.Name);
+                        autenticador.Remover(autenticador.Obter(usuario.Guid));
+                     }
+                         
                 }
                 catch (AutenticacaoException)
                 {

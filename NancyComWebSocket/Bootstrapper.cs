@@ -7,6 +7,9 @@ using Nancy.TinyIoc;
 using Nancy.Bootstrapper;
 using Nancy.Authentication.Forms;
 using NancyComWebSocket.Autenticacao;
+using NancyComWebSocket.Dominio.Repositorios.Interfaces;
+using NancyComWebSocket.Dominio.Servico;
+using NancyComWebSocket.Dominio.Repositorio;
 
 namespace NancyComWebSocket
 {
@@ -17,6 +20,8 @@ namespace NancyComWebSocket
 
         private IServiceProvider ServiceProvider;
         private ILogger Log;
+        private IRepositorioUsuarios repositorioUsuario;
+        private ServicoAutenticacao servicoAutenticacao;
 
         public Bootstrapper(IConfiguration configurator, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
@@ -114,9 +119,14 @@ namespace NancyComWebSocket
         {
             container.Register<ILogger>(Serilog.Log.Logger);
 
-            // var cp = new ConnectionProvider(Configurator);
-            // container.Register<IConnectionProvider>(cp);
-            // container.Register<IRepositorioConfiguracao>(new DBRepositorioConfiguracao(cp));
+             var cp = new ConnectionProvider(Configurator);
+             container.Register<IConnectionProvider>(cp);
+
+            repositorioUsuario = new DBRepositorioUsuarios(cp);
+            servicoAutenticacao = new ServicoAutenticacao(repositorioUsuario);
+
+            container.Register<IRepositorioUsuarios>(repositorioUsuario);
+            container.Register<ServicoAutenticacao>(servicoAutenticacao);
 
             var autenticador = AutenticadorUsuario.GetInstance();
             container.Register<IAutenticador>(autenticador);

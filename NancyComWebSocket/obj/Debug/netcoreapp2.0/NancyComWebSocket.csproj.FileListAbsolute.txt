@@ -1,24 +1,3 @@
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.deps.json
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.runtimeconfig.json
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.runtimeconfig.dev.json
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.dll
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.pdb
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.csproj.CoreCompileInputs.cache
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.AssemblyInfoInputs.cache
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.AssemblyInfo.cs
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.dll
-C:\Users\weberson.sqa\Desktop\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.pdb
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.deps.json
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.runtimeconfig.json
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.runtimeconfig.dev.json
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.dll
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.pdb
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.csprojAssemblyReference.cache
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.csproj.CoreCompileInputs.cache
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.AssemblyInfoInputs.cache
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.AssemblyInfo.cs
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.dll
-C:\Users\gamer\OneDrive\Área de Trabalho\NancyComWebSocket\NancyComWebSocket\obj\Debug\netcoreapp2.0\NancyComWebSocket.pdb
 C:\Users\gamer\OneDrive\Documentos\LeDFinancas\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.deps.json
 C:\Users\gamer\OneDrive\Documentos\LeDFinancas\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.runtimeconfig.json
 C:\Users\gamer\OneDrive\Documentos\LeDFinancas\NancyComWebSocket\bin\Debug\netcoreapp2.0\NancyComWebSocket.runtimeconfig.dev.json
