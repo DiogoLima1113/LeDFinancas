@@ -126,3 +126,12 @@ margin: 5px
     background: transparent !important;
     box-shadow: none;
 }
+.column-center{
+    text-align: center;
+}
+.column-right{
+    text-align: right;
+}
+.column-left{
+    text-align: left;
+}

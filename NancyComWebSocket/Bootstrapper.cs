@@ -10,6 +10,7 @@ using NancyComWebSocket.Autenticacao;
 using NancyComWebSocket.Dominio.Repositorios.Interfaces;
 using NancyComWebSocket.Dominio.Servico;
 using NancyComWebSocket.Dominio.Repositorio;
+using NancyComWebSocket.Dominio.Repositorios.Classes;
 
 namespace NancyComWebSocket
 {
@@ -21,6 +22,8 @@ namespace NancyComWebSocket
         private IServiceProvider ServiceProvider;
         private ILogger Log;
         private IRepositorioUsuarios repositorioUsuario;
+        private IRepositorioNaturezaLancamento repositorioNaturezaLancamento;
+        private IRepositorioTitulos repositorioTitulos;
         private ServicoAutenticacao servicoAutenticacao;
 
         public Bootstrapper(IConfiguration configurator, IHostingEnvironment env, IServiceProvider serviceProvider)
@@ -124,9 +127,13 @@ namespace NancyComWebSocket
 
             repositorioUsuario = new DBRepositorioUsuarios(cp);
             servicoAutenticacao = new ServicoAutenticacao(repositorioUsuario);
+            repositorioNaturezaLancamento = new DBRepositorioNaturezaLancamento(cp);
+            repositorioTitulos = new DBRepositorioTitulos(cp);
 
             container.Register<IRepositorioUsuarios>(repositorioUsuario);
             container.Register<ServicoAutenticacao>(servicoAutenticacao);
+            container.Register<IRepositorioNaturezaLancamento>(repositorioNaturezaLancamento);
+            container.Register<IRepositorioTitulos>(repositorioTitulos);
 
             var autenticador = AutenticadorUsuario.GetInstance();
             container.Register<IAutenticador>(autenticador);

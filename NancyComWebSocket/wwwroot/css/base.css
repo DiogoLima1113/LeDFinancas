@@ -58,3 +58,11 @@ nav{ background-color: rgb(60,141,188) !important; }
 button[type="button"].btn{
    width: 90px;
 }
+
+#nome-usuario:focus, #nome-usuario:active{
+   background-color: rgb(60, 141, 188) !important;
+}
+
+#nome-usuario:hover{
+   background-color: transparent !important;
+}
